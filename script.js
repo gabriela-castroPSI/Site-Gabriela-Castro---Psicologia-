@@ -56,6 +56,13 @@
 
     e.preventDefault();
     closeMenu();
+
+    // Link para o topo (marca/nome): sobe até o início de fato
+    if (id === 'topo' || (header && header.contains(target))) {
+      window.scrollTo({ top: 0, behavior: reduceMotion ? 'auto' : 'smooth' });
+      return;
+    }
+
     scrollToSection(target, true);
   });
 
